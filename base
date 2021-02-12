@@ -1,0 +1,11 @@
+> setwd("~/Desktop/Regis/MSDS600/R_MSDS600")
+> library(e1071)
+> cl <- read.csv("cuttlength.csv")
+> attach(cl)
+> m <- subset(cl, select = -Species)
+> s <- factor(Species)
+> s
+> model <- svm(m,s, probablility = T)
+> summary(model)
+> model2 <- predict(model, m)
+> model2
